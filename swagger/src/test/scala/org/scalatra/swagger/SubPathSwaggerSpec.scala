@@ -27,11 +27,11 @@ class SubPathSwaggerSpec  extends ScalatraSpec with JsonMatchers { val is = s2""
   implicit val formats: Formats = DefaultFormats
 
   def listResources = get("/api-docs") {
-    jackson.parseJson(body) \ "apis" \\ "path" must_== JString("/api/hackers")
+    jackson.parseJson(body) \ "apis" \\ "path" must_== JArray(List(JString("/api/hackers")))
   }
   def listHackerOperations = get("/api-docs/api/hackers") {
     val json = jackson.parseJson(body)
-    json \ "apis" \\ "path" must_== JObject("path" -> JString("/api/hackers/") :: "path" -> JString("/api/hackers/{id}") :: Nil)
+    json \ "apis" \\ "path" must_== JArray(List(JString("/api/hackers/"), JString("/api/hackers/{id}")))
   }
   def checkModelOrder = pending
 
