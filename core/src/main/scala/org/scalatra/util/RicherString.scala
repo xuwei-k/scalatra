@@ -5,7 +5,7 @@ import java.util.regex.Pattern
 
 import rl.UrlCodingUtils
 
-class RicherString(orig: String) {
+class RicherString(val orig: String) extends AnyVal {
 
   def isBlank: Boolean = {
     orig == null || orig.trim.isEmpty
