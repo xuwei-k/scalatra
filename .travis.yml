@@ -1,4 +1,6 @@
 language: scala
+jdk:
+  - openjdk6
 scala:
   - 2.10.6
   - 2.11.7
