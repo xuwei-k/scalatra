@@ -2,7 +2,7 @@ import sbt._
 import Keys._
 
 object Dependencies {
-  lazy val parserCombinators        =  "org.scala-lang.modules"  %% "scala-parser-combinators"   % "1.1.1"
+  lazy val parserCombinators        =  "org.scala-lang.modules"  %% "scala-parser-combinators"   % "1.1.2"
   lazy val xml                      =  "org.scala-lang.modules"  %% "scala-xml"                  % "1.2.0"
   lazy val akkaActor                =  "com.typesafe.akka"       %% "akka-actor"                 % akkaVersion
   lazy val akkaTestkit              =  "com.typesafe.akka"       %% "akka-testkit"               % akkaVersion
@@ -46,14 +46,14 @@ object Dependencies {
   lazy val metricsServlets          =  "io.dropwizard.metrics"   %  "metrics-servlets"           % "4.0.5"
   lazy val metricsServlet           =  "io.dropwizard.metrics"   %  "metrics-servlet"            % "4.0.5"
   lazy val googleGuava              =  "com.google.guava"        %  "guava"                      % "23.0"
-  lazy val twirlApi                 =  "com.typesafe.play"       %% "twirl-api"                  % "1.4.0"
+  lazy val twirlApi                 =  "com.typesafe.play"       %% "twirl-api"                  % "1.4.1"
 
   private val akkaVersion             = "2.5.22"
   private val atmosphereCompatVersion = "2.0.1"
   private val httpcomponentsVersion   = "4.5.6"
   private val jettyVersion            = "9.4.6.v20170531"
   private val json4sVersion           = "3.6.5"
-  private val scalateVersion          = "1.9.1"
+  private val scalateVersion          = "1.9.2"
   private val scalatestVersion        = "3.0.7"
   private val specs2Version           = "4.5.1"
 }
