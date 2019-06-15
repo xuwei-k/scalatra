@@ -5,7 +5,7 @@ import Dependencies._
 
 lazy val scalatraSettings = Seq(
   organization := "org.scalatra",
-  crossScalaVersions := Seq("2.12.7", "2.11.12"),
+  crossScalaVersions := Seq("2.12.7", "2.11.12", "2.13.0"),
   scalaVersion := crossScalaVersions.value.head,
   scalacOptions ++= Seq(
     "-target:jvm-1.8",
@@ -15,7 +15,6 @@ lazy val scalatraSettings = Seq(
     "-Xcheckinit",
     "-encoding", "utf8",
     "-feature",
-    "-Ywarn-unused-import",
     "-language:higherKinds",
     "-language:postfixOps",
     "-language:implicitConversions",
@@ -87,10 +86,10 @@ lazy val scalatraCore = Project(
       jUniversalChardet,
       mimeUtil,
       commonsLang3,
-      parserCombinators,
-      xml,
-      akkaActor % "test",
-      akkaTestkit % "test"
+      parserCombinators.value,
+      xml.value,
+      akkaActor.value % "test",
+      akkaTestkit.value % "test"
     ),
     description := "The core Scalatra framework"
   )
@@ -120,8 +119,8 @@ lazy val scalatraAtmosphere = Project(
       atmosphereCompatTomcat7,
       atmosphereClient % "test",
       jettyWebsocket % "test",
-      akkaActor,
-      akkaTestkit % "test"
+      akkaActor.value,
+      akkaTestkit.value % "test"
     ),
     description := "Atmosphere integration for scalatra"
   )
@@ -131,7 +130,7 @@ lazy val scalatraScalate = Project(
   id = "scalatra-scalate",
   base = file("scalate")).settings(
     scalatraSettings ++ Seq(
-    libraryDependencies += scalate,
+    libraryDependencies += scalate.value,
     description := "Scalate integration with Scalatra"
   )
 ) dependsOn(scalatraCore % "compile;test->test;provided->provided")
@@ -212,7 +211,7 @@ lazy val scalatraTest = Project(
       httpmime,
       jodaTime % "provided",
       jodaConvert % "provided"
-    ) ++ specs2.map(_ % "test"),
+    ) ++ specs2.value.map(_ % "test"),
     description := "The abstract Scalatra test framework"
   )
 ) dependsOn(scalatraCommon % "compile;test->test;provided->provided")
@@ -222,7 +221,7 @@ lazy val scalatraScalatest = Project(
   base = file("scalatest")).settings(
     scalatraSettings ++ Seq(
     libraryDependencies ++= Seq(
-      scalatest,
+      scalatest.value,
       junit,
       testng % "optional"
     ),
@@ -234,7 +233,7 @@ lazy val scalatraSpecs2 = Project(
   id = "scalatra-specs2",
   base = file("specs2")).settings(
     scalatraSettings ++ Seq(
-    libraryDependencies ++= specs2,
+    libraryDependencies ++= specs2.value,
     description := "Specs2 support for the Scalatra test framework"
   )
 ) dependsOn(scalatraTest % "compile;test->test;provided->provided")
@@ -245,7 +244,7 @@ lazy val scalatraSwagger = Project(
     scalatraSettings ++ Seq(
     libraryDependencies ++= Seq(
       json4sExt,
-      parserCombinators,
+      parserCombinators.value,
       logbackClassic % "provided"
     ),
     description := "Scalatra integration with Swagger"
@@ -270,7 +269,7 @@ lazy val scalatraMetrics = Project(
   base = file("metrics")).settings(
     scalatraSettings ++ Seq(
     libraryDependencies ++= Seq(
-      metricsScala,
+      metricsScala.value,
       metricsServlets,
       metricsServlet
     ),
