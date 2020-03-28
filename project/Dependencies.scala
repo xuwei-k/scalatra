@@ -3,7 +3,7 @@ import Keys._
 
 object Dependencies {
   lazy val parserCombinators        = Def.setting("org.scala-lang.modules"  %% "scala-parser-combinators"   % parserCombinatorVersion.value)
-  lazy val xml                      =  "org.scala-lang.modules"  %% "scala-xml"                  % "1.2.0"
+  lazy val xml                      =  "org.scala-lang.modules"  %% "scala-xml"                  % "1.3.0"
   lazy val akkaActor                =  "com.typesafe.akka"       %% "akka-actor"                 % akkaVersion
   lazy val akkaTestkit              =  "com.typesafe.akka"       %% "akka-testkit"               % akkaVersion
   lazy val atmosphereRuntime        =  "org.atmosphere"          %  "atmosphere-runtime"         % "2.5.13"
@@ -15,7 +15,7 @@ object Dependencies {
   lazy val atmosphereCompatTomcat7  =  "org.atmosphere"          %  "atmosphere-compat-tomcat7"  % atmosphereCompatVersion
   lazy val commonsFileupload        =  "commons-fileupload"      %  "commons-fileupload"         % "1.3.3"
   lazy val commonsIo                =  "commons-io"              %  "commons-io"                 % "2.5"
-  lazy val commonsLang3             =  "org.apache.commons"      %  "commons-lang3"              % "3.9"
+  lazy val commonsLang3             =  "org.apache.commons"      %  "commons-lang3"              % "3.10"
   lazy val httpclient               =  "org.apache.httpcomponents" % "httpclient"                % httpcomponentsVersion
   lazy val httpmime                 =  "org.apache.httpcomponents" % "httpmime"                  % httpcomponentsVersion
   lazy val jettyServer              =  "org.eclipse.jetty"       %  "jetty-server"               % jettyVersion
@@ -32,7 +32,7 @@ object Dependencies {
   lazy val scalatestJunit           =  "org.scalatestplus"       %% "junit-4-12"                 % "3.1.1.0"
   lazy val jUniversalChardet        =  "com.googlecode.juniversalchardet" % "juniversalchardet"  % "1.0.3"
   lazy val logbackClassic           =  "ch.qos.logback"          %  "logback-classic"            % "1.2.3"
-  lazy val mockitoAll               =  "org.mockito"             %  "mockito-core"               % "3.3.0"
+  lazy val mockitoAll               =  "org.mockito"             %  "mockito-core"               % "3.3.3"
   lazy val scalate                  =  "org.scalatra.scalate"    %% "scalate-core"               % scalateVersion
   lazy val scalatest                =  "org.scalatest"           %% "scalatest"                  % scalatestVersion
   lazy val servletApi               =  "javax.servlet"           %  "javax.servlet-api"          % "3.1.0"
