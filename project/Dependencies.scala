@@ -6,7 +6,7 @@ object Dependencies {
   lazy val xml                      =  "org.scala-lang.modules"  %% "scala-xml"                  % "1.3.0"
   lazy val akkaActor                =  "com.typesafe.akka"       %% "akka-actor"                 % akkaVersion
   lazy val akkaTestkit              =  "com.typesafe.akka"       %% "akka-testkit"               % akkaVersion
-  lazy val atmosphereRuntime        =  "org.atmosphere"          %  "atmosphere-runtime"         % "2.5.15"
+  lazy val atmosphereRuntime        =  "org.atmosphere"          %  "atmosphere-runtime"         % "2.6.0"
   lazy val atmosphereJQuery         =  "org.atmosphere.client"   %  "jquery"                     % "2.2.21" artifacts(Artifact("jquery", "war", "war"))
   lazy val atmosphereClient         =  "org.atmosphere"          %  "wasync"                     % "2.1.7"
   lazy val atmosphereRedis          =  "org.atmosphere"          %  "atmosphere-redis"           % "2.5.2"
@@ -51,7 +51,7 @@ object Dependencies {
   private val akkaVersion             = "2.5.31"
   private val atmosphereCompatVersion = "2.0.1"
   private val httpcomponentsVersion   = "4.5.6"
-  private val jettyVersion            = "9.4.29.v20200521"
+  private val jettyVersion            = "9.4.30.v20200611"
   private val json4sVersion           = "3.6.8"
   private val scalateVersion          = "1.9.5"
   private val scalatestVersion        = "3.1.2"
