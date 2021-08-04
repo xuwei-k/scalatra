@@ -1,6 +1,5 @@
 val excludeTests = Set(
   "org.scalatra.test.specs2.ScalatraSpecSpec",
-  "org.scalatra.NotFoundSpec",
   "org.scalatra.swagger.ModelSpec",
   "org.scalatra.swagger.SwaggerSpec2",
   "org.scalatra.swagger.ModelCollectionSpec",
