@@ -34,7 +34,6 @@ lazy val scalatraSettings = Seq(
         )
       case _ =>
         Seq(
-          "-Xignore-scala2-macros",
           "-source",
           "3.0-migration",
         )
@@ -97,6 +96,13 @@ lazy val scalatraCommon = Project(
 lazy val scalatraCore = Project(
   id = "scalatra",
   base = file("core")).settings(scalatraSettings ++ Seq(
+    Test / scalacOptions ++= {
+      if (scalaBinaryVersion.value == "3") {
+        Seq("-Xignore-scala2-macros")
+      } else {
+        Nil
+      }
+    },
     libraryDependencies ++= Seq(
       servletApi % "provided;test",
       slf4jApi,
@@ -230,6 +236,13 @@ lazy val scalatraSpecs2 = Project(
   base = file("specs2")).settings(
     scalatraSettings ++ Seq(
     libraryDependencies ++= specs2,
+    Test / scalacOptions ++= {
+      if (scalaBinaryVersion.value == "3") {
+        Seq("-Xignore-scala2-macros")
+      } else {
+        Nil
+      }
+    },
     description := "Specs2 support for the Scalatra test framework"
   )
 ) dependsOn(scalatraTest % "compile;test->test;provided->provided")
