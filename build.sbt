@@ -405,6 +405,7 @@ lazy val `scalatra-swagger` = projectMatrix
     },
     libraryDependencies ++= Seq(
       parserCombinators,
+      paranamer,
       logbackClassic % "provided"
     ),
     description := "Scalatra integration with Swagger"
